@@ -1,0 +1,25 @@
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:./data/contactmgr</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <!-- Create the database schema on startup -->
+        <!-- Any previous data will be wiped out on application startup -->
+        <!--<property name="hbm2ddl.auto">update</property>-->
+
+        <!-- Update the database schema on startup -->
+        <!-- Only database schema changes will be made -->
+        <!-- instead of recreating the whole schema -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Show the queries prepared by Hibernate -->
+        <property name="show_sql">true</property>
+
+        <!-- Name the annotated entity classes -->
+        <mapping class="com.bobantalevski.contactmgr.model.Contact"/>
+    </session-factory>
+</hibernate-configuration>
